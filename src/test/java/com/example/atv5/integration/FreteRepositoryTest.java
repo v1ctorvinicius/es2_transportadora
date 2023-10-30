@@ -8,6 +8,11 @@ import org.springframework.boot.test.context.SpringBootTest;
 public class FreteRepositoryTest {
 
     @Test
+    public void deveRecuperarTodosOsFretes(){
+
+    }
+
+    @Test
     public void deveRecuperarTodosOsFretesDeUmClienteOrdenadoPorValor(){
 //        Cliente cliente = clienteRepository.findById(13L);
 //        List<Frete> fretes = freteRepository.findAllByValorAsc();
