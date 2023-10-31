@@ -1,16 +1,12 @@
 package com.example.atv5.model;
 
 import jakarta.persistence.*;
-import jakarta.validation.constraints.Min;
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotEmpty;
-import jakarta.validation.constraints.Size;
+import jakarta.validation.constraints.*;
 import lombok.*;
 import org.hibernate.validator.constraints.Length;
 
 @Entity
-@Getter
-@Setter
+@Data
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
@@ -27,7 +23,7 @@ public class Cidade {
     @Size(min = 2, max = 30)
     private String UF;
 
-    @NotEmpty(message = "taxa é obrigatória")
+    @NotNull(message = "taxa é obrigatória")
     private Float taxa;
 
 }

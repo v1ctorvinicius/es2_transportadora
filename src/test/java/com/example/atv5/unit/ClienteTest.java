@@ -19,8 +19,6 @@ import java.util.Set;
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 public class ClienteTest {
 
-
-
     @Autowired
     private LocalValidatorFactoryBean validator;
 

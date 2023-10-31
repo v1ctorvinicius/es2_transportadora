@@ -13,6 +13,8 @@ import java.util.List;
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 public class ClienteRepositoryTest {
 
+    private final int QUANT_CLIENTES = 11;
+
     @Autowired
     private ClienteRepository repository;
 
@@ -21,7 +23,7 @@ public class ClienteRepositoryTest {
         List<Cliente> clientes = repository.findAll();
         Assertions.assertNotNull(clientes);
         Assertions.assertFalse(clientes.isEmpty());
-        Assertions.assertEquals(11, clientes.size());
+        Assertions.assertEquals(QUANT_CLIENTES, clientes.size());
     }
 
     @Test
