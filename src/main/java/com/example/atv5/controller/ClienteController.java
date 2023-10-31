@@ -17,8 +17,9 @@ import java.util.List;
 public class ClienteController {
 
     private final ClienteService service;
+
     @GetMapping
-    public ResponseEntity<List<Cliente>> getAllClientes(){
+    public ResponseEntity<List<Cliente>> getAllClientes() {
         return ResponseEntity.ok(service.getAllClientes());
     }
 }

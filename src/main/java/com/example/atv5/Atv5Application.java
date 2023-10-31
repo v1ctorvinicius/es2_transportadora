@@ -1,5 +1,7 @@
 package com.example.atv5;
 
+import com.example.atv5.model.Cliente;
+import jakarta.validation.Valid;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
