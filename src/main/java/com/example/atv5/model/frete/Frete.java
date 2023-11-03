@@ -14,8 +14,6 @@ import lombok.*;
 @AllArgsConstructor
 public class Frete {
 
-    private final Float PRECO_ATUAL_FRETE = 10.0f;
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "codigo_frete")

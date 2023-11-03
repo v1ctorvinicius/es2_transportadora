@@ -1,7 +1,7 @@
 package com.example.atv5.controller;
 
 import com.example.atv5.model.frete.Frete;
-import com.example.atv5.service.FreteService;
+import com.example.atv5.service.frete.FreteService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -18,7 +18,12 @@ public class FreteController {
 
     @GetMapping()
     public ResponseEntity<List<Frete>> listarFretes(){
-        return ResponseEntity.ok(service.listarFretes());
+        return ResponseEntity.ok(service.listaFretes());
+    }
+
+    @PostMapping("/cadastrar")
+    public ResponseEntity<Frete> cadastrarCidade(@Valid @RequestBody Frete frete) {
+        return ResponseEntity.ok(service.cadastraFrete(frete));
     }
 
     @GetMapping("/por-cliente/{id}")
@@ -28,23 +33,8 @@ public class FreteController {
 
     @GetMapping("/maior-valor")
     public ResponseEntity<Frete> buscarFreteDeMaiorValor(){
-        return ResponseEntity.ok(service.buscaFreteDeMaiorValor());
+        return ResponseEntity.ok(service.recuperaFreteDeMaiorValor());
     }
-
-    @PostMapping("/cadastrar")
-    public ResponseEntity<Frete> cadastrarCidade(@Valid @RequestBody Frete frete) {
-        return ResponseEntity.ok(service.cadastraFrete(frete));
-    }
-    /*
-        {
-            "cidadeId": 1,
-            "clienteId": 2,
-            "descricao": "Frete 15",
-            "peso": 10.0,
-            "valor": 50.0
-        }
-    */
-
 
 
 }

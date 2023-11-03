@@ -5,41 +5,36 @@ import com.example.atv5.service.CidadeService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@RestController
+@Controller
 @RequiredArgsConstructor
-@RequestMapping("/cidades")
 public class CidadeController {
     private final CidadeService service;
 
-    @PostMapping("/cadastrar")
-    public ResponseEntity<Cidade> cadastrarCidade(@Valid @RequestBody Cidade cidade) {
-        return ResponseEntity.ok(service.cadastraCidade(cidade));
+
+    public Cidade cadastrarCidade(@Valid Cidade cidade) {
+        return service.cadastraCidade(cidade);
     }
     /*
-        {
-            "nome": "São Luis",
-            "taxa": 7.0,
-            "uf": "MA"
-        }
-    */
+    {
+        "nome": "São Luis",
+        "taxa": 7.0,
+        "uf": "MA"
+    }*/
 
-    @GetMapping()
-    public ResponseEntity<List<Cidade>> listarCidades() {
-        return ResponseEntity.ok(service.listaCidades());
-    }
 
-    @GetMapping("/nome/{nome}")
-    public ResponseEntity<List<Cidade>> buscarCidadePorNome(@PathVariable String nome) {
-        return ResponseEntity.ok(service.buscaPorNome(nome));
+    public List<Cidade> listarCidades() {
+        return service.listaCidades();
     }
 
 
-
-
+    public List<Cidade> buscarCidadePorNome(@PathVariable String nome) {
+        return service.buscaPorNome(nome);
+    }
 
 
 }
